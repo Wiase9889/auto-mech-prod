@@ -1,0 +1,17 @@
+.indexpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to top right, rgba(255, 0, 0, 0.876), rgba(0, 0, 255, 0.876));
+}
+
+.logo {
+  padding: 90px 80px;
+  font-size: 110px;
+  background-color: #fff;
+  border-radius: 50%;
+  font-weight: 800;
+}
+

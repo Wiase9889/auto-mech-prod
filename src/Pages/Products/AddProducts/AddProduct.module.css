@@ -1,0 +1,74 @@
+.add_products {
+  width: 80%;
+  height: 100vh;
+  /* background-color: green; */
+  padding: 80px 50px;
+  /* overflow: hidden; */
+}
+
+.product_hd {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(226, 226, 226, 0.119);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.product_hd h2 {
+  font-size: var(--heading-h2);
+}
+
+.product_form {
+  width: 100%;
+  height: calc(100vh - 200px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  padding: 20px 30px;
+}
+
+.form_group, .category {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.form_group label, .category label {
+  font-size: var(--heading-h5);
+  color: rgb(77, 77, 77);
+}
+
+.form_group input, .category select {
+  padding: 15px 10px;
+  width: 100%;
+  font-size: var(--paragraph-default);
+  border-radius: 5px;
+  border: 1px solid rgba(188, 188, 188, 0.598);
+}
+
+.form_group input:focus, .category select:focus {
+  outline: 2px solid var(--primary-blue-light);
+  /* border: 2px solid var(--primary-blue-light); */
+}
+
+.product_id {
+  cursor: not-allowed;
+}
+
+.add_product {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+.addProductBtn {
+  padding: 18px 55px;
+  width: 100%;
+  font-size: 22px;
+}
+
+.category option {
+  font-size: 16px;
+}

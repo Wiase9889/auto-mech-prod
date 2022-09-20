@@ -1,0 +1,54 @@
+.dashboard {
+  background-color: white;
+  width: 80%;
+  height: 100vh;
+}
+
+.panel {
+  height: 100%;
+  background-color: rgba(202, 202, 202, 0.17);
+  padding: 80px 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 250px;
+  /* border: 2px solid rgb(154, 154, 154); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 25px;
+  box-shadow: var(--shadow-300);
+}
+
+.length {
+  font-size: var(--extra-large);
+  font-weight: 700;
+  color: var(--light-100);
+}
+
+.name {
+  font-size: var(--heading-h3);
+  color: var(--light-100);
+}
+
+.card:nth-child(1) {
+  background-color: rgba(19, 97, 175, 0.539);
+}
+
+.card:nth-child(2) {
+  background-color: rgba(13, 154, 13, 0.453);
+}
+
+.card:nth-child(3) {
+  background-color: rgb(243, 182, 68);
+}
+
+.card:nth-child(4) {
+  background-color: rgb(170, 165, 165);
+}

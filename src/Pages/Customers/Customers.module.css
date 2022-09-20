@@ -1,0 +1,54 @@
+.customers {
+  width: 80%;
+  height: 100vh;
+  padding: 80px 50px;
+  /* overflow-y: scroll; */
+}
+
+.customer_hd {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(226, 226, 226, 0.119);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.customer_hd h2 {
+  font-size: var(--heading-h2);
+}
+
+.addCustomerBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.addCustomerBtn a {
+  background-color: dodgerblue;
+  padding: 15px 25px;
+  color: white;
+  border-radius: 5px;
+  font-size: var(--heading-h5);
+}
+
+.contact_display {
+  width: 100%;
+  overflow-y: hidden;
+  height: calc(100vh - 250px);
+  background-color: rgb(239, 236, 236);
+  margin-top: 12px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  overflow-y: scroll;
+}
+
+.contact {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}

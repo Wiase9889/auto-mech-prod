@@ -1,0 +1,56 @@
+{
+  "name": "Auto Mechanics",
+  "short_name": "Auto Mech",
+  "description": "Auto Mechanics Dashboard",
+  "icons": [
+    {
+      "src": "./logo512.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    }
+  ],
+  "shortcuts": [
+    {
+      "short_name": "Auto Mechanics",
+      "description": "Auto Mechanics Dashboard",
+      "url": ".",
+      "icons": [
+        {
+          "src": "./logo512.png",
+          "sizes": "152x152"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./assets/splashscreen.png",
+      "sizes": "1366x768",
+      "type": "image/png",
+      "description": "Splash Screen"
+    },
+    {
+      "src": "./assets/homescreen.png",
+      "sizes": "1366x768",
+      "type": "image/png",
+      "description": "Home Screen"
+    },
+    {
+      "src": "./assets/signupscreen.png",
+      "sizes": "1366x768",
+      "type": "image/png",
+      "description": "Signup Screen"
+    },
+    {
+      "src": "./assets/loginscreen.png",
+      "sizes": "1366x768",
+      "type": "image/png",
+      "description": "Login Screen"
+    }
+  ],
+  "start_url": ".",
+  "orientation": "landscape",
+  "display": "standalone",
+  "theme_color": "#0d4c73",
+  "background_color": "#fff"
+}
