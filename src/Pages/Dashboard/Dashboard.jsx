@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import classes from './Dashboard.module.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import db from '../../DB/db'
@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [suppliersLength, setSuppliersLength] = useState(null)
   const [employeesLength, setEmployeesLength] = useState(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Products
     db.collection('products').get().then(products => {
       setProductLength(products.length)

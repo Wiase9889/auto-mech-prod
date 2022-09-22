@@ -1,28 +1,29 @@
-import React, { useLayoutEffect, useState } from 'react'
-import classes from './AddCustomer.module.css'
+import React, { useEffect, useState } from 'react'
+import classes from './EditCustomer.module.css'
 import Sidebar from '../../../Components/Sidebar/Sidebar'
 import db from '../../../DB/db'
+import { useParams } from 'react-router-dom'
 
 
-const AddCustomer = () => {
-  const [id, setId] = useState(0)
+const EditCustomer = () => {
+  const { customerId } = useParams();
+
+  const [id, setId] = useState(customerId)
   const [name, setName] = useState('')
   const [contact, setContact] = useState('')
 
-  useLayoutEffect(() => {
-    let autoGenId = () => {
-      db.collection('customers').get().then(products => {
-        setId(products.length + 1)
-      })
+  useEffect(() => {
+    let update = () => {
+      db.collection('customers').doc({ id }).update({ name, contact })
     }
 
     return () => {
-      autoGenId();
+      update();
     }
   })
 
   // Function to add the user inputed values to the Database...
-  const addCustomer = (event) => {
+  const updateCustomer = (event) => {
     event.preventDefault();
 
     let customerData = { id, name, contact }
@@ -31,7 +32,6 @@ const AddCustomer = () => {
       alert('Please add a customer')
       return;
     } else {
-
       alert('Succesfully added customer')
       db.collection('customers').add(customerData)
 
@@ -45,22 +45,22 @@ const AddCustomer = () => {
       <Sidebar />
       <div className={classes.addcustomer}>
         <div className={classes.customer_hd}>
-          <h2>Add New Customer</h2>
+          <h2>Edit Customer</h2>
         </div>
 
         {/* Add New customer Form */}
-        <form className={classes.customer_form} autoCorrect='true' onSubmit={addCustomer}>
+        <form className={classes.customer_form} autoCorrect='true' onSubmit={updateCustomer}>
           <div className={classes.form_group}>
             <label htmlFor="customer_id">Customer Id</label>
             <input
               type="number"
               id='customer_id'
               name='customer id'
-              placeholder={`00${id}`}
+              placeholder={id}
               className={classes.customer_id}
               required
               disabled
-              value={`00${id}`}
+              value={id}
               onChange={(e) => setId(e.target.value)}
             />
           </div>
@@ -93,8 +93,8 @@ const AddCustomer = () => {
             <button
               type="submit"
               className={classes.addcustomerBtn}
-              onClick={addCustomer}
-            >Add customer
+              onClick={updateCustomer}>
+              Update
             </button>
           </div>
         </form>
@@ -103,4 +103,4 @@ const AddCustomer = () => {
   )
 }
 
-export default AddCustomer
+export default EditCustomer

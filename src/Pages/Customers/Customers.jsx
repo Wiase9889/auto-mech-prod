@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import classes from './Customers.module.css'
@@ -21,7 +22,25 @@ const Customers = () => {
     }
   }, [])
 
-  // 
+  // Edit Function
+  const handleEdit = (id) => {
+    console.log(id);
+    alert(id)
+  }
+
+  const handleDelete = (id) => {
+    const confirmDelete = confirm('Are you sure?');
+
+    if (confirmDelete) {
+      db.collection('customers').doc({ id }).delete();
+      alert(`Successfully removed ${id}`);
+
+      // Refetch the customers data
+      db.collection('customers').get();
+    } else {
+      return
+    }
+  }
   return (
     <>
       <Sidebar />
@@ -37,13 +56,21 @@ const Customers = () => {
         {/* Display all Customers */}
         <div className={classes.contact_display}>
           {
-            customers.length === 0 ? <h2>Sorry, no customer available</h2> :
+            customers.length === 0 ? (
+              <div className={classes.empty}>
+                <h2>Sorry, no customer available</h2>
+              </div>
+            ) :
               customers?.map(({ name, id, contact }) => (
                 <div key={id} className={classes.contact}>
                   <p>{id}</p>
                   <h2>{name}</h2>
                   <h2>{contact}</h2>
                   <br />
+                  <div className={classes.controls}>
+                    <Link to={`/${id}/edit-customer`}>Edit</Link>
+                    <button type='button' onClick={() => handleDelete(id)}>Delete</button>
+                  </div>
                 </div>
               ))
           }

@@ -8,3 +8,5 @@ const db = new Localbase("auto-mech");
 export const userAuth = [];
 
 export default db;
+
+db.config.debug = false;

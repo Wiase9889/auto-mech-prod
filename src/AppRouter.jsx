@@ -14,10 +14,12 @@ import Customer from './Pages/Customer/Customer'
 import Suppliers from './Pages/Suppliers/Suppliers'
 import Supplier from './Pages/Supplier/Supplier'
 import ProtectRoute from "./Pages/ProtectedPage/ProtectedRoute";
-import Sidebar from "./Components/Sidebar/Sidebar";
 import Product from "./Pages/Products/Product/Product";
 import Products from "./Pages/Products/Products/Products";
 import AddCustomer from "./Pages/Customers/AddCustomer/AddCustomer";
+import Employees from "./Pages/Employees/Employees";
+import Employee from "./Pages/Employees/Employee/Employee";
+import EditCustomer from "./Pages/Customers/EditCustomer/EditCustomer";
 
 const AppRouter = () => {
   const currentUser = JSON.parse(localStorage.getItem('userCred'));
@@ -29,7 +31,6 @@ const AppRouter = () => {
   return (
     <div className={classes.router}>
       <BrowserRouter>
-        {/* <Sidebar /> */}
         <Routes>
           <Route path="/" element={<Indexpage />} />
           <Route path="/home" element={<Home />} />
@@ -38,14 +39,17 @@ const AppRouter = () => {
           <Route element={<ProtectRoute />}>
             <Route path="/dashboard" element={<Dashboard />} exact />
             <Route path="/products" element={<Products />} />
-            <Route path="/product/:productId" element={<Product />} />
+            <Route path="/products/:productId" element={<Product />} />
             <Route path="/new-product" element={<AddProduct />} />
             <Route path="/customers" element={<Customers />} />
             <Route path="/new-customer" element={<AddCustomer />} />
             <Route path="/customers/:customerId" element={<Customer />} />
+            <Route path="/:customerId/edit-customer" element={<EditCustomer />} />
             <Route path="/suppliers" element={<Suppliers />} />
             <Route path="/suppliers/:supplierId" element={<Supplier />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/employees" element={<Employees />} />
+            <Route path=":employeeId" element={<Employee />} />
           </Route>
         </Routes>
       </BrowserRouter>
