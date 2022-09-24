@@ -1,0 +1,24 @@
+.table_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  /* padding: 0 30px; */
+}
+
+.table_body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: black; */
+  color: black;
+}
+
+.table_body td {
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+}

@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import classes from './Customers.module.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import { Link } from 'react-router-dom'
@@ -9,7 +9,7 @@ import db from '../../DB/db'
 const Customers = () => {
   const [customers, setCustomers] = useState([])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Function to add the user inputed values to the Database...
     let unsubscribe = () => {
       db.collection('customers').get().then(customers => {
@@ -21,12 +21,6 @@ const Customers = () => {
       unsubscribe()
     }
   }, [])
-
-  // Edit Function
-  const handleEdit = (id) => {
-    console.log(id);
-    alert(id)
-  }
 
   const handleDelete = (id) => {
     const confirmDelete = confirm('Are you sure?');
@@ -56,7 +50,7 @@ const Customers = () => {
         {/* Display all Customers */}
         <div className={classes.contact_display}>
           {
-            customers.length === 0 ? (
+            customers?.length === 0 ? (
               <div className={classes.empty}>
                 <h2>Sorry, no customer available</h2>
               </div>
@@ -68,7 +62,7 @@ const Customers = () => {
                   <h2>{contact}</h2>
                   <br />
                   <div className={classes.controls}>
-                    <Link to={`/${id}/edit-customer`}>Edit</Link>
+                    <Link to={`/edit-customer/${id}`}>Edit</Link>
                     <button type='button' onClick={() => handleDelete(id)}>Delete</button>
                   </div>
                 </div>

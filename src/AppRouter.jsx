@@ -44,7 +44,7 @@ const AppRouter = () => {
             <Route path="/customers" element={<Customers />} />
             <Route path="/new-customer" element={<AddCustomer />} />
             <Route path="/customers/:customerId" element={<Customer />} />
-            <Route path="/:customerId/edit-customer" element={<EditCustomer />} />
+            <Route path="/edit-customer/:customerId" element={<EditCustomer />} />
             <Route path="/suppliers" element={<Suppliers />} />
             <Route path="/suppliers/:supplierId" element={<Supplier />} />
             <Route path="/settings" element={<Settings />} />

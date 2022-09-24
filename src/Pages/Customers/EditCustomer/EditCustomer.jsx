@@ -8,14 +8,12 @@ import { useParams } from 'react-router-dom'
 const EditCustomer = () => {
   const { customerId } = useParams();
 
-  const [id, setId] = useState(customerId)
+  const [id, setId] = useState(parseInt(customerId))
   const [name, setName] = useState('')
   const [contact, setContact] = useState('')
 
   useEffect(() => {
-    let update = () => {
-      db.collection('customers').doc({ id }).update({ name, contact })
-    }
+    let update = () => db.collection('customers').doc({ id }).update({ name, contact });
 
     return () => {
       update();
