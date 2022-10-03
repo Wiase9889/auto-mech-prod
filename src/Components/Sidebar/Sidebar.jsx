@@ -83,7 +83,7 @@ const Sidebar = () => {
           </span>
           Employees
         </NavLink>
-        <NavLink to='/settings' style={({ isActive }) => {
+        {/* <NavLink to='/settings' style={({ isActive }) => {
           return {
             backgroundColor: isActive ? 'dodgerblue' : 'transparent',
             color: 'white'
@@ -93,7 +93,7 @@ const Sidebar = () => {
             <Cogs fill='white' className={classes.icons} height='20' width='20' />
           </span>
           Settings
-        </NavLink>
+        </NavLink> */}
       </nav>
     </div>
   )

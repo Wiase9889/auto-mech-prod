@@ -1,5 +1,110 @@
-.suppliers {
+.suppliers_page {
   width: 80%;
   height: 100vh;
-  background-color: blueviolet;
+  padding: 20px 50px;
+  /* overflow-y: scroll; */
+}
+
+.suppliers_hd {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(226, 226, 226, 0.119);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.suppliers_hd h2 {
+  font-size: var(--heading-h2);
+}
+
+.addsuppliersBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.addsuppliersBtn a {
+  background-color: black;
+  padding: 15px 25px;
+  color: white;
+  border-radius: 5px;
+  font-size: var(--heading-h5);
+}
+
+.suppliers_display {
+  width: 100%;
+  height:calc(100vh - 200px);
+  margin-top: 15px;
+  overflow-y: scroll;
+}
+
+.suppliers {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background-color: white;
+  height: 200px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.empty {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.controls button {
+  width: 50%;
+  background: black;
+  font-size: 14px;
+}
+
+.controls a {
+  width: 50%;
+  background: black;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+.table {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  position: sticky;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.table th {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.supplier__lists {
+  width: 100%;
+  height: 100%;
 }

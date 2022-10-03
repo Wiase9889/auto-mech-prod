@@ -12,7 +12,6 @@ import Customers from './Pages/Customers/Customers'
 import Settings from './Pages/Settings/Settings'
 import Customer from './Pages/Customer/Customer'
 import Suppliers from './Pages/Suppliers/Suppliers'
-import Supplier from './Pages/Supplier/Supplier'
 import ProtectRoute from "./Pages/ProtectedPage/ProtectedRoute";
 import Product from "./Pages/Products/Product/Product";
 import Products from "./Pages/Products/Products/Products";
@@ -20,6 +19,7 @@ import AddCustomer from "./Pages/Customers/AddCustomer/AddCustomer";
 import Employees from "./Pages/Employees/Employees";
 import Employee from "./Pages/Employees/Employee/Employee";
 import EditCustomer from "./Pages/Customers/EditCustomer/EditCustomer";
+import Supplier from './Pages/Supplier/Supplier'
 
 const AppRouter = () => {
   const currentUser = JSON.parse(localStorage.getItem('userCred'));
@@ -46,7 +46,8 @@ const AppRouter = () => {
             <Route path="/customers/:customerId" element={<Customer />} />
             <Route path="/edit-customer/:customerId" element={<EditCustomer />} />
             <Route path="/suppliers" element={<Suppliers />} />
-            <Route path="/suppliers/:supplierId" element={<Supplier />} />
+            <Route path="/new-supplier" element={<Supplier />} />
+            <Route path="/new-supplier/:supplierId" element={<Supplier />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/employees" element={<Employees />} />
             <Route path=":employeeId" element={<Employee />} />

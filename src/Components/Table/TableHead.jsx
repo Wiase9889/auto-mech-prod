@@ -4,7 +4,7 @@ import classes from './TableHead.module.css'
 const TableHead = ({ data }) => {
   return (
     <div className={classes.table_hd}>
-      <th>
+      <thead>
         <td>Id</td>
         <td>Name</td>
         <td>Category</td>
@@ -12,7 +12,7 @@ const TableHead = ({ data }) => {
         <td>Contact</td>
         <td>Price</td>
         <td>Controls</td>
-      </th>
+      </thead>
     </div>
   )
 }
