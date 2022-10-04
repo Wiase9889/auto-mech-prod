@@ -1,30 +1,30 @@
-.customers {
+.customers__page {
   width: 80%;
   height: 100vh;
-  padding: 80px 50px;
+  padding: 20px 50px;
   /* overflow-y: scroll; */
 }
 
-.customer_hd {
+.customers__hd {
   width: 100%;
   padding: 15px;
   background-color: rgba(226, 226, 226, 0.119);
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.customer_hd h2 {
+.customers__hd h2 {
   font-size: var(--heading-h2);
 }
 
-.addCustomerBtn {
+.addcustomersBtn {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.addCustomerBtn a {
+.addcustomersBtn a {
   background-color: black;
   padding: 15px 25px;
   color: white;
@@ -32,20 +32,14 @@
   font-size: var(--heading-h5);
 }
 
-.contact_display {
+.customers_display {
   width: 100%;
-  overflow-y: hidden;
-  height: calc(100vh - 250px);
-  background-color: rgba(239, 236, 236, 0.749);
-  margin-top: 12px;
-  padding: 15px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  height:calc(100vh - 200px);
+  margin-top: 15px;
   overflow-y: scroll;
 }
 
-.contact {
+.customers {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -65,7 +59,6 @@
   grid-template-columns: repeat(auto-fit, 1fr);
   align-items: center;
   justify-content: center;
-  background-color: orange;
 }
 
 .controls {
@@ -89,4 +82,29 @@
   text-align: center;
   color: white;
   border-radius: 5px;
+}
+
+.table {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  position: sticky;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.table th {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.supplier__lists {
+  width: 100%;
+  height: 100%;
 }
